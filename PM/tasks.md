@@ -18,3 +18,5 @@ always update the depency files if you add new libraries
 ✅ Add missing OpenGL libraries to Dockerfile.
 ✅ Add additional potentially missing libraries for OpenCV to Dockerfile.
 ✅ Add libglib2.0-0 to Dockerfile to resolve libgthread-2.0.so.0 error.
+✅ Correct CMD instruction in Dockerfile to use shell form for environment variable.
+✅ Move application start command from Dockerfile to docker-compose.yaml.

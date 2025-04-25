@@ -39,4 +39,3 @@ ENV PORT=${PORT}
 EXPOSE ${PORT}
 
 # Command to run the Gradio GUI
-CMD ["python", "demo_gradio.py", "--port", "$(PORT)", "--listen"]
