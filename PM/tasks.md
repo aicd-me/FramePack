@@ -28,3 +28,7 @@ always update the depency files if you add new libraries
 ✅ Change Dockerfile base image to devel to include nvcc compiler.
 ✅ Update Dockerfile with corrected system dependencies and build tools for flash-attn.
 ✅ Add --no-build-isolation flag to flash-attn in requirements.txt.
+✅ Remove --no-build-isolation flag from flash-attn in requirements.txt.
+✅ Update xformers version in requirements.txt to 0.0.26.post1.
+✅ Remove flash-attn from requirements.txt.
+✅ Install flash-attn separately in Dockerfile with --no-build-isolation.

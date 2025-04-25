@@ -15,7 +15,6 @@ opencv-contrib-python
 safetensors
 xformers==0.0.26.post1
 
-flash-attn==2.5.8 --no-build-isolation
 
 gradio==5.23.0
 fastapi>=0.110.0
