@@ -37,3 +37,5 @@ always update the depency files if you add new libraries
 ✅ Add --share flag to Dockerfile CMD.
 ✅ Update Dockerfile base image and PyTorch installation for version compatibility.
 ✅ Update requirements.txt with version pins for compatibility.
+✅ Set default port to 18111 in demo_gradio.py.
+✅ Update healthcheck port in docker-compose.yaml to 18111.
