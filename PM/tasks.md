@@ -26,3 +26,5 @@ always update the depency files if you add new libraries
 ✅ Replace Dockerfile with user-provided content.
 ✅ Remove redundant command directive from docker-compose.yaml.
 ✅ Change Dockerfile base image to devel to include nvcc compiler.
+✅ Update Dockerfile with corrected system dependencies and build tools for flash-attn.
+✅ Add --no-build-isolation flag to flash-attn in requirements.txt.

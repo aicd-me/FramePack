@@ -12,12 +12,17 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.10 \
-    git \
+    python3.10-dev \
     python3.10-venv \
     python3-pip \
+    build-essential \
+    git \
     libgl1 \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
+
+# Install build tools
+RUN pip install --no-cache-dir packaging ninja wheel
 
 # Install PyTorch 2.6.0 with CUDA 12.6
 RUN pip install --upgrade pip setuptools wheel packaging
