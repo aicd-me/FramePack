@@ -20,3 +20,4 @@ always update the depency files if you add new libraries
 ✅ Add libglib2.0-0 to Dockerfile to resolve libgthread-2.0.so.0 error.
 ✅ Correct CMD instruction in Dockerfile to use shell form for environment variable.
 ✅ Move application start command from Dockerfile to docker-compose.yaml.
+✅ Remove unrecognized --listen argument from docker-compose.yaml command.

@@ -9,7 +9,7 @@ services:
       - "${PORT:-7860}:7860"
     environment:
       - PORT=7860
-    command: python demo_gradio.py --port $PORT --listen
+    command: python demo_gradio.py --port $PORT
     # Add GPU support - adjust based on your system and requirements
     deploy:
       resources:
