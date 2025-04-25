@@ -32,3 +32,4 @@ always update the depency files if you add new libraries
 ✅ Update xformers version in requirements.txt to 0.0.26.post1.
 ✅ Remove flash-attn from requirements.txt.
 ✅ Install flash-attn separately in Dockerfile with --no-build-isolation.
+✅ Reorder installation steps in Dockerfile to install PyTorch before flash-attn.

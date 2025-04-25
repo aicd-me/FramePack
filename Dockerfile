@@ -24,8 +24,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install build tools
 RUN pip install --no-cache-dir packaging ninja wheel
 
-RUN pip install --no-build-isolation flash-attn==2.5.8
-
 # Install PyTorch 2.6.0 with CUDA 12.6
 RUN pip install --upgrade pip setuptools wheel packaging
 
@@ -34,6 +32,8 @@ RUN pip install --no-cache-dir \
     torchvision==0.21.0 \
     torchaudio==2.6.0 \
     --index-url https://download.pytorch.org/whl/cu126
+
+RUN pip install --no-build-isolation flash-attn==2.5.8
 
 # Application setup
 COPY requirements.txt .
