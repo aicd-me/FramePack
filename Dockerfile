@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install PyTorch 2.6.0 with CUDA 12.6
+RUN pip install --upgrade pip setuptools wheel packaging
+
 RUN pip install --no-cache-dir \
     torch==2.6.0 \
     torchvision==0.21.0 \
