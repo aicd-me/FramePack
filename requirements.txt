@@ -13,7 +13,7 @@ torchsde==0.2.6
 einops
 opencv-contrib-python
 safetensors
-xformers==0.0.27
+xformers==0.0.26.post1
 
 flash-attn==2.5.8
 
