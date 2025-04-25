@@ -22,3 +22,6 @@ always update the depency files if you add new libraries
 ✅ Move application start command from Dockerfile to docker-compose.yaml.
 ✅ Remove unrecognized --listen argument from docker-compose.yaml command.
 ✅ Add --share flag to the command in docker-compose.yaml.
+✅ Correct port mapping in docker-compose.yaml to expose container port 18111.
+✅ Replace Dockerfile with user-provided content.
+✅ Remove redundant command directive from docker-compose.yaml.

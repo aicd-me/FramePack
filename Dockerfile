@@ -1,41 +1,40 @@
-# Use a base image with Python 3.10 and CUDA support
-FROM nvidia/cuda:12.1.1-devel-ubuntu22.04
+# Use CUDA 12.6 compatible base image
+FROM nvidia/cuda:12.6.0-runtime-ubuntu22.04
 
-# Set the working directory
+# Set working directory and environment variables
 WORKDIR /app
+ENV GRADIO_SERVER_NAME=0.0.0.0 \
+    GRADIO_SERVER_PORT=7860 \
+    PYTHONUNBUFFERED=1
 
-# Install Python and dependencies
-RUN apt-get update && apt-get install -y \
+# Install system dependencies (optimized layers)
+RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.10 \
     python3.10-venv \
     python3-pip \
-    git \
-    libgl1-mesa-glx \
-    libsm6 \
-    libxrender1 \
-    libfontconfig1 \
-    libxcb-render0 \
-    libxcb-shape0 \
+    libgl1 \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Create a virtual environment and activate it
-RUN python3.10 -m venv /app/.venv
-ENV PATH="/app/.venv/bin:$PATH"
+# Install PyTorch with correct CUDA 12.6 compatibility
+RUN pip install --no-cache-dir \
+    torch==2.3.0 \
+    torchvision==0.18.0 \
+    torchaudio==2.3.0 \
+    --index-url https://download.pytorch.org/whl/cu126
 
-# Install PyTorch with CUDA 12.6
-RUN pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
-
-# Copy the requirements file and install dependencies
+# Copy and install application requirements
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code
+# Copy application code
 COPY . .
 
-# Expose the port for the Gradio GUI, defaulting to 7860
-ARG PORT=7860
-ENV PORT=${PORT}
-EXPOSE ${PORT}
+# Expose Gradio port
+EXPOSE 7860
 
-# Command to run the Gradio GUI
+# Health check and entrypoint
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s \
+    CMD curl -f http://localhost:7860 || exit 1
+
+CMD ["python", "demo_gradio.py"]
