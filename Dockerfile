@@ -36,8 +36,8 @@ RUN pip install --no-cache-dir \
 RUN pip install --no-build-isolation flash-attn==2.5.8
 
 # Application setup
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements-org.txt .
+RUN pip install --no-cache-dir -r requirements-org.txt
 COPY . .
 
 # Expose and healthcheck
