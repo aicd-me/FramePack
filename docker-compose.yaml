@@ -6,10 +6,13 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "${PORT:-7860}:7860"
+      - "${PORT:-7860}:7860"  # Simplified port mapping (host:container)
     environment:
-      - PORT=7860
-    # Add GPU support - adjust based on your system and requirements
+      - GRADIO_SERVER_NAME=0.0.0.0  # Required for external access
+      - GRADIO_SERVER_PORT=7860     # Explicit port declaration
+      - GRADIO_ALLOW_FLAGGING=never
+      - GRADIO_TEMP_DIR=/app/tmp
+      - PYTHONUNBUFFERED=1
     deploy:
       resources:
         reservations:
@@ -18,8 +21,8 @@ services:
               count: all
               capabilities: [gpu]
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:7860"]
-      interval: 1m30s
+      test: ["CMD-SHELL", "curl -f http://localhost:7860 || exit 1"]
+      interval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
