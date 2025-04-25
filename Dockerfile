@@ -5,7 +5,7 @@ FROM nvidia/cuda:12.6.0-devel-ubuntu22.04
 WORKDIR /app
 ENV DEBIAN_FRONTEND=noninteractive \
     GRADIO_SERVER_NAME=0.0.0.0 \
-    GRADIO_SERVER_PORT=7860 \
+    GRADIO_SERVER_PORT=18111 \
     PYTHONUNBUFFERED=1
 
 # Install system dependencies
@@ -43,6 +43,6 @@ COPY . .
 # Expose and healthcheck
 EXPOSE 7860
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s \
-    CMD curl -f http://localhost:7860 || exit 1
+    CMD curl -f http://localhost:18111 || exit 1
 
-CMD ["/usr/bin/python3.10", "demo_gradio.py", "--share"]
+CMD ["/usr/bin/python3.10", "demo_gradio.py", "--share", "--port", "18111"]
