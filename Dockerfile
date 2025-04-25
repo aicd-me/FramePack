@@ -45,4 +45,4 @@ EXPOSE 7860
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s \
     CMD curl -f http://localhost:7860 || exit 1
 
-CMD ["python", "demo_gradio.py"]
+CMD ["/app/.venv/bin/python", "demo_gradio.py", "--share"]

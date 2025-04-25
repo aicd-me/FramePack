@@ -33,3 +33,5 @@ always update the depency files if you add new libraries
 ✅ Remove flash-attn from requirements.txt.
 ✅ Install flash-attn separately in Dockerfile with --no-build-isolation.
 ✅ Reorder installation steps in Dockerfile to install PyTorch before flash-attn.
+✅ Update Dockerfile CMD to use explicit path to python executable in venv.
+✅ Add --share flag to Dockerfile CMD.
