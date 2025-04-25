@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  framepack:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT:-7860}:7860"
+    environment:
+      - PORT=7860
+    # Add GPU support - adjust based on your system and requirements
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
