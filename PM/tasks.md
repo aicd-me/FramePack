@@ -15,3 +15,4 @@ always update the depency files if you add new libraries
 ✅ Add a healthcheck to the docker-compose.yaml file.
 ✅ Remove GPU-specific configuration from docker-compose.yaml for macOS compatibility.
 ✅ Re-add GPU-specific configuration to docker-compose.yaml for Nvidia machines.
+✅ Add missing OpenGL libraries to Dockerfile.

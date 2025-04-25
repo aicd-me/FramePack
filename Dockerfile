@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y \
     python3.10-venv \
     python3-pip \
     git \
+    libgl1-mesa-glx \
+    libsm6 \
+    libxrender1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a virtual environment and activate it
