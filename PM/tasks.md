@@ -35,3 +35,5 @@ always update the depency files if you add new libraries
 ✅ Reorder installation steps in Dockerfile to install PyTorch before flash-attn.
 ✅ Update Dockerfile CMD to use explicit path to python executable in venv.
 ✅ Add --share flag to Dockerfile CMD.
+✅ Update Dockerfile base image and PyTorch installation for version compatibility.
+✅ Update requirements.txt with version pins for compatibility.

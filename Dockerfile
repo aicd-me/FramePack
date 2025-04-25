@@ -28,10 +28,10 @@ RUN pip install --no-cache-dir packaging ninja wheel
 RUN pip install --upgrade pip setuptools wheel packaging
 
 RUN pip install --no-cache-dir \
-    torch==2.6.0 \
-    torchvision==0.21.0 \
-    torchaudio==2.6.0 \
-    --index-url https://download.pytorch.org/whl/cu126
+    torch==2.3.0 \
+    torchvision==0.18.0 \
+    torchaudio==2.3.0 \
+    --index-url https://download.pytorch.org/whl/cu121
 
 RUN pip install --no-build-isolation flash-attn==2.5.8
 
