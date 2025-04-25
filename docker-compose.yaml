@@ -17,3 +17,9 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7860"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
