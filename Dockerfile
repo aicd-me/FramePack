@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     libfontconfig1 \
     libxcb-render0 \
     libxcb-shape0 \
+    libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a virtual environment and activate it

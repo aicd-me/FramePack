@@ -17,3 +17,4 @@ always update the depency files if you add new libraries
 ✅ Re-add GPU-specific configuration to docker-compose.yaml for Nvidia machines.
 ✅ Add missing OpenGL libraries to Dockerfile.
 ✅ Add additional potentially missing libraries for OpenCV to Dockerfile.
+✅ Add libglib2.0-0 to Dockerfile to resolve libgthread-2.0.so.0 error.
