@@ -25,3 +25,4 @@ always update the depency files if you add new libraries
 ✅ Correct port mapping in docker-compose.yaml to expose container port 18111.
 ✅ Replace Dockerfile with user-provided content.
 ✅ Remove redundant command directive from docker-compose.yaml.
+✅ Change Dockerfile base image to devel to include nvcc compiler.

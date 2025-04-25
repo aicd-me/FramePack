@@ -1,5 +1,5 @@
 # Base image with CUDA 12.6 runtime
-FROM nvidia/cuda:12.6.0-runtime-ubuntu22.04
+FROM nvidia/cuda:12.6.0-devel-ubuntu22.04
 
 # System configuration
 WORKDIR /app
