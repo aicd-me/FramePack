@@ -21,3 +21,4 @@ always update the depency files if you add new libraries
 ✅ Correct CMD instruction in Dockerfile to use shell form for environment variable.
 ✅ Move application start command from Dockerfile to docker-compose.yaml.
 ✅ Remove unrecognized --listen argument from docker-compose.yaml command.
+✅ Add --share flag to the command in docker-compose.yaml.
