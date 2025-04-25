@@ -13,6 +13,9 @@ RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
     libsm6 \
     libxrender1 \
+    libfontconfig1 \
+    libxcb-render0 \
+    libxcb-shape0 \
     && rm -rf /var/lib/apt/lists/*
 
 # Create a virtual environment and activate it
